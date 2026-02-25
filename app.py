@@ -1,4 +1,4 @@
-importimport streamlit as st
+import streamlit as st
 import streamlit.components.v1 as components
 
 RAILWAY_URL = "golf-swing-analyzer.up.railway.app"
