@@ -1,17 +1,22 @@
 import streamlit as st
 
-def redirect_to(url):
-    """
-    Redirects the user using an HTML meta refresh tag.
-    This bypasses Streamlit Cloud's iframe sandbox restrictions.
-    """
-    nav_script = f"""
-        <meta http-equiv="refresh" content="0; url='{url}'">
-    """
-    st.markdown(nav_script, unsafe_allow_html=True)
+# Set page title and icon
+st.set_page_config(page_title="Page Moved", page_icon="🚀")
 
-st.title("Redirecting...")
+# Center the content using columns
+col1, col2, col3 = st.columns([1, 2, 1])
 
-# Call the function with your target URL
-target_website = "golf-swing-analyzer.up.railway.app" 
-redirect_to(target_website)
+with col2:
+    st.image("https://cdn-icons-png.flaticon.com/512/2983/2983780.png", width=100)
+    st.title("We have moved!")
+    
+    st.info("Our application has been relocated to a new web address to provide a better experience.")
+    
+    # Define your new URL
+    new_url = "golf-swing-analyzer.up.railway.app"
+    
+    # Use a large Link Button for the redirect
+    st.link_button(f"Go to {new_url}", new_url, type="primary", use_container_width=True)
+    
+    st.write("---")
+    st.caption("Please update your bookmarks. You will be redirected manually by clicking the button above.")
