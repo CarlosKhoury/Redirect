@@ -1,10 +1,15 @@
 import streamlit as st
+import streamlit.components.v1 as components
 
 RAILWAY_URL = "golf-swing-analyzer.up.railway.app"
 
-st.title("We've Moved 🚀")
-st.write("Our golf app is now hosted on a new platform.")
-
-st.link_button("Go to the new site", RAILWAY_URL)
+components.html(
+    f"""
+    <script>
+        window.top.location.href = "{RAILWAY_URL}";
+    </script>
+    """,
+    height=0,
+)
 
 st.stop()
