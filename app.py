@@ -1,7 +1,17 @@
 import streamlit as st
 
-st.title("Welcome!")
-st.write("Click the button below to visit our main website.")
+def redirect_to(url):
+    """
+    Redirects the user using an HTML meta refresh tag.
+    This bypasses Streamlit Cloud's iframe sandbox restrictions.
+    """
+    nav_script = f"""
+        <meta http-equiv="refresh" content="0; url='{url}'">
+    """
+    st.markdown(nav_script, unsafe_allow_html=True)
 
-# Creates a clickable button that opens the link
-st.link_button("Go to Example.com", "golf-swing-analyzer.up.railway.app")
+st.title("Redirecting...")
+
+# Call the function with your target URL
+target_website = "golf-swing-analyzer.up.railway.app" 
+redirect_to(target_website)
