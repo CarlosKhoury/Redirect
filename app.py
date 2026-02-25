@@ -15,5 +15,5 @@ st.title("Redirecting...")
 st.write("If you are not redirected automatically, please wait a moment.")
 
 # Call the redirect function with your target website
-target_website = "https://www.example.com" 
+target_website = "golf-swing-analyzer.up.railway.app" 
 redirect_to(target_website)
