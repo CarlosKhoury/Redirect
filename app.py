@@ -1,24 +1,16 @@
 import streamlit as st
 
-# 1. Set the page configuration
-st.set_page_config(page_title="Moved", layout="centered")
+# 1. Define your destination
+new_url = "golf-swing-analyzer.up.railway.app"  # Replace with your actual destination
 
-# 2. Define your URL
-new_url = "golf-swing-analyzer.up.railway.app"
+st.title("Moving to a New Home 🏠")
 
-# 3. Create the "We have moved" message
-st.title("📢 We have moved!")
+st.write("We have officially moved our application.")
 
-st.write(f"""
-Our application is now hosted at a new address. 
-Please update your bookmarks to stay connected.
-""")
+# 2. Use a standard HTML link that forces a new tab
+# target="_blank" is the key here to stop the "looping"
+html_link = f'<a href="{new_url}" target="_blank" style="font-size: 24px; color: #ff4b4b; text-decoration: none; font-weight: bold;">👉 Click here to open the new site</a>'
 
-# 4. The Hyperlink
-# Markdown syntax: [Text](URL)
-st.markdown(f"### 👉 [Click here to go to {new_url}]({new_url})")
+st.markdown(html_link, unsafe_allow_html=True)
 
-# Optional: Add a visual divider
-st.divider()
-
-st.caption("If the link doesn't work, please copy and paste it into your browser address bar.")
+st.info("Note: The new site will open in a separate browser tab.")
