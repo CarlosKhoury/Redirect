@@ -1,15 +1,19 @@
 import streamlit as st
 import streamlit.components.v1 as components
 
-RAILWAY_URL = "golf-swing-analyzer.up.railway.app"
+def redirect_to(url):
+    """
+    Redirects the user's browser to the specified URL.
+    Uses window.parent to break out of the Streamlit iframe.
+    """
+    js = f"window.parent.location.href = '{url}';"
+    html = f"<script>{js}</script>"
+    components.html(html)
 
-components.html(
-    f"""
-    <script>
-        window.top.location.href = "{RAILWAY_URL}";
-    </script>
-    """,
-    height=0,
-)
+# Add a message so the user knows what is happening
+st.title("Redirecting...")
+st.write("If you are not redirected automatically, please wait a moment.")
 
-st.stop()
+# Call the redirect function with your target website
+target_website = "https://www.example.com" 
+redirect_to(target_website)
