@@ -1,3 +1,4 @@
+import streamlit as st
 st.markdown(
     """
     <meta http-equiv="refresh" content="0; url=golf-swing-analyzer.up.railway.app">
